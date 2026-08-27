@@ -1,0 +1,48 @@
+body{
+    margin-top: 0;
+    height: 100%;
+    background-color: blueviolet;
+    background-image: url(../img/imagen.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+nav{
+    background-color: black;
+    padding: 1px;
+   
+}
+nav ul{
+    
+    list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+nav ul li{
+     text-align: center;
+    margin-right: 20px;
+}
+nav ul li a{
+     text-align: center;
+    color: antiquewhite;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    display: inline-block;
+    color: aqua;
+    background-color: blue;
+    padding: 10px 20px;
+border-radius: 10px;
+background-color: brown;
+text-align: center;
+}
+.titulo{
+    color: blue;
+    text-align: center;
+}
+
+
+
