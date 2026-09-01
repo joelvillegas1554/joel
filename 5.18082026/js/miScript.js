@@ -26,6 +26,12 @@ function divicion(A,B) {
 return C;
     
 }
-let A=parseInt(prompt("introduzca un numero"));
-let B=parseInt(prompt("introduzca un numero"));
-alert (divicion(A,B));
+
+
+
+
+
+
+
+
+
