@@ -1,0 +1,97 @@
+const ListaEstudiante=
+[{nro:1,
+    nombre:"Abril",
+    apellido:"Chambi",
+    fecNac:"12/09/2020",
+    edad:"6",
+    genero:"femenino"
+
+},
+{nro:2,
+    nombre:"Mateo",
+    apellido:"Vargas",
+    fecNac:"25/03/2020",
+    edad:"6",
+    genero:"masculino"
+},
+{nro:3,
+    nombre:"Sofía",
+    apellido:"Mamani",
+    fecNac:"08/07/2019",
+    edad:"7",
+    genero:"femenino"
+},
+{nro:4,
+    nombre:"Diego",
+    apellido:"Quispe",
+    fecNac:"14/01/2020",
+    edad:"6",
+    genero:"masculino"
+},
+{nro:5,
+    nombre:"Valentina",
+    apellido:"Condori",
+    fecNac:"30/05/2019",
+    edad:"7",
+    genero:"femenino"
+},
+{nro:6,
+    nombre:"Lucas",
+    apellido:"Flores",
+    fecNac:"19/11/2020",
+    edad:"5",
+    genero:"masculino"
+},
+{nro:7,
+    nombre:"Camila",
+    apellido:"Rojas",
+    fecNac:"02/02/2020",
+    edad:"6",
+    genero:"femenino"
+},
+{nro:8,
+    nombre:"Sebastián",
+    apellido:"Pérez",
+    fecNac:"21/06/2019",
+    edad:"7",
+    genero:"masculino"
+},
+{nro:9,
+    nombre:"Luciana",
+    apellido:"Cortez",
+    fecNac:"10/10/2020",
+    edad:"5",
+    genero:"femenino"
+},
+{nro:10,
+    nombre:"Gabriel",
+    apellido:"Choque",
+    fecNac:"17/04/2019",
+    edad:"7",
+    genero:"masculino"
+}
+];
+function mostrarEstudiantes()
+{
+    const datos=document.getElementById("datos");
+    datos.innerHTML="";
+    const fila="";
+    ListaEstudiante.forEach(
+        estudiante=>{
+            let fila=`
+               <tr>
+                  <td>${estudiante.nro}</td>
+                  <td>${estudiante.nombre}</td>
+                  <td>${estudiante.apellido}</td>
+                  <td>${estudiante.fecNac}</td>
+                  <td>${estudiante.edad}</td>
+                  <td>${estudiante.genero}</td>
+                </tr>
+            `;
+            datos.innerHTML+=fila;
+
+        }
+    );
+
+}
+mostrarEstudiantes();

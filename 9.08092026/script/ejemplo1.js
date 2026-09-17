@@ -1,28 +1,37 @@
-alert("bienvenido a clases de sistema");
-let tareas =[];
-function agregarTarea(tarea="", estado="Incompleto"){
-    if(tarea===""){
-     tarea = document.getElementById("tarea").value;
-    estado = document.getElementById("tareaSelect").value;
+alert("bienvenido waaaaaaaaaaaaaaaaaaaaa");
+let tareas = [];
+function agregarTareas(tarea="",estado="Incompleto") {
+    if(tarea === ""){
+    tarea = document.getElementById("tarea").value;
+    estado= document.getElementById("tareaSelect").value;
     }
-    tareas.push({descripcion: tarea, completada: false});
+    tareas.push({ descripcion: tarea, completada:estado});
+    
 }
-function eliminarTarea(indice){
-    if(indice>= 0 && indice < tareas.length){
-        tareas.splice(indice,1);
+function eliminarTareas(indice) {
+    if (indice >= 0 && indice < tareas.length) {
+        tareas.splice(indice, 1);
     }else{
-        console.log("indice invalido");
+        console.log("Indice invalido");
     }
 }
 function mostrarTareas(){
-    console.log(" mostrandolista de tareas:");
-    tareas.forEach((tarea, indice)=>{
-        console.log(`${indice + 1} . 
-            [${tarea.completada ? 'X' : ' '}]     
-            ${tarea.descripcion}`);
-    });}
-agregarTarea("comprar leche","Completado");
-agregarTarea("hacer ejercicio","Completado");
-agregarTarea("estudiar JavaScript","Incompleto");
-agregarTarea("sbir a GitHUb","Incompleto");
+    console.log("Mostrando Lista de tareas:");
+const contenedor = document.getElementById("respuestas");
+let respuestasHtml = "";
+tareas.forEach((tarea, index) => {
+    console.log(`Tarea ${index + 1},[${tarea.completada}]: ${tarea.descripcion}`);
+    respuestaHtml = `<ul>`;
+    respuestaHtml += `<li>Tarea ${index + 1},[${tarea.completada}]: ${tarea.descripcion}</li>`;
+    respuestaHtml += `</ul>`;
+    respuestasHtml += respuestaHtml;
+
+    });
+ document.getElementById("respuesta").innerHTML = respuestasHtml;
+}
+//Adicionar las tareas
+agregarTareas("Comprar leche","Completado");
+agregarTareas("Hacer ejercicio","Completado");
+agregarTareas("Estudiar JavaScript","Incompleto");
+agregarTareas("Subir a GitHub","Incompleto");
 mostrarTareas();

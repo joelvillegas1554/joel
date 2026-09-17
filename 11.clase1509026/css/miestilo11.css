@@ -1,0 +1,26 @@
+body{
+    background-color: bisque;
+    
+}
+.titulo{
+    text-align: center;
+    color: blue;
+}
+.titulo1{
+    text-align: center;
+    color: blue;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{ 
+    background-color: rgb(5, 74, 92);
+    border: 2px solid#333;
+    text-align: center;
+    font-size: 20px;
+    color: aliceblue;
+}
+tr,td{
+    border: 2px solid#333;
+}
