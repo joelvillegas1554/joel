@@ -1,36 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../11.clase1509026/css/miestilo11.css">
+    <title>Lista de estudiantes</title>
 </head>
 <body>
-    <h1 class="titulo">CREACION DE TABLAS</h1>
-    <h2 class="titulo1">Listado de estudiantes</h2>
+ <h1 class="titulo">Creacion de tablas</h1>
+    <h2 class="titulo1">listado de estudiantes</h2>
     <table>
         <thead>
-          <tr>
+        <tr>
             <th>Nro</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Fecha de nacimiento</th>
             <th>Edad</th>
             <th>Genero</th>
-          </tr>
+        </tr>
         </thead>
         <tbody id="datos">
-            <tr>
-                <td>1</td>
-                <td>Abril</td>
-                <td>Chambi</td>
-                <td>12/09/2000</td>
-                <td>26</td>
-                <td>Femenino</td>
-            </tr>
-<script src="./script/ejemplo1.js"></script>
+        <tr>
+            <td>1</td>
+            <td>Abril</td>
+            <td>Chambi</td>
+            <td>11/09/2000</td>
+            <td>12</td>
+            <td>Femenino</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Nicole</td>
+            <td>Coca</td>
+            <td>02/10/2001</td>
+            <td>22</td>
+            <td>Femenino</td>
+        </tr>
         </tbody>
     </table>
+    <h3 style="text-align: center; color: rgb(128, 0, 17);">
+        Formulario
+    </h3>
+
+    Nombre:
+    <input type="text" id="nombre" placeholder="Ingresar su nombre">
+    <br><br>
+
+    Apellido:
+    <input type="text" id="apellido" placeholder="Ingresar su apellido">
+    <br><br>
+
+    Fecha de nacimiento:
+    <input type="date" id="fecha">
+    <br><br>
+
+    Género:
+    <select id="genero">
+        <option value="">Seleccione su género</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>
+    <br><br>
+
+    <button onclick="agregarTareas()">Adicionar</button>
+    <button onclick="eliminarTareas()">Limpiar</button>
+
+    <br><br>
+
+    <p id="respuesta"></p>
+
+    <script src="./script/ejemplo1.js"></script>
+
 </body>
 </html>

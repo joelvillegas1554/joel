@@ -1,26 +1,25 @@
 body{
-    background-color: bisque;
-    
+    background-color: #ffd900;
 }
 .titulo{
+    color: #0a1afa;
     text-align: center;
-    color: blue;
 }
 .titulo1{
+    color: #0a1afa;
     text-align: center;
-    color: blue;
 }
 table{
     width: 100%;
     border-collapse: collapse;
 }
-th{ 
-    background-color: rgb(5, 74, 92);
-    border: 2px solid#333;
-    text-align: center;
+tr,th{
+    border: 1px solid black;
+    padding: 2px;
+    font-weight: bold;
     font-size: 20px;
-    color: aliceblue;
 }
 tr,td{
-    border: 2px solid#333;
+    border: 1px solid black;
+    padding: 2px;
 }

@@ -1,97 +1,76 @@
-const ListaEstudiante=
-[{nro:1,
-    nombre:"Abril",
-    apellido:"Chambi",
-    fecNac:"12/09/2020",
-    edad:"6",
-    genero:"femenino"
-
-},
-{nro:2,
-    nombre:"Mateo",
-    apellido:"Vargas",
-    fecNac:"25/03/2020",
-    edad:"6",
-    genero:"masculino"
-},
-{nro:3,
-    nombre:"Sofía",
-    apellido:"Mamani",
-    fecNac:"08/07/2019",
-    edad:"7",
-    genero:"femenino"
-},
-{nro:4,
-    nombre:"Diego",
-    apellido:"Quispe",
-    fecNac:"14/01/2020",
-    edad:"6",
-    genero:"masculino"
-},
-{nro:5,
-    nombre:"Valentina",
-    apellido:"Condori",
-    fecNac:"30/05/2019",
-    edad:"7",
-    genero:"femenino"
-},
-{nro:6,
-    nombre:"Lucas",
-    apellido:"Flores",
-    fecNac:"19/11/2020",
-    edad:"5",
-    genero:"masculino"
-},
-{nro:7,
-    nombre:"Camila",
-    apellido:"Rojas",
-    fecNac:"02/02/2020",
-    edad:"6",
-    genero:"femenino"
-},
-{nro:8,
-    nombre:"Sebastián",
-    apellido:"Pérez",
-    fecNac:"21/06/2019",
-    edad:"7",
-    genero:"masculino"
-},
-{nro:9,
-    nombre:"Luciana",
-    apellido:"Cortez",
-    fecNac:"10/10/2020",
-    edad:"5",
-    genero:"femenino"
-},
-{nro:10,
-    nombre:"Gabriel",
-    apellido:"Choque",
-    fecNac:"17/04/2019",
-    edad:"7",
-    genero:"masculino"
-}
+const ListaDeEstudiantes = [
+    { nro: 3, nombre: "Carla", apellido: "Justiniano", edad: 21, fechaNacimiento: "10/01/2005", genero: "Masculino" },
+    { nro: 10, nombre: "Tigre", apellido: "Mendoza", edad: 20, fechaNacimiento: "22/12/2005", genero: "Femenino" }
 ];
-function mostrarEstudiantes()
-{
-    const datos=document.getElementById("datos");
-    datos.innerHTML="";
-    const fila="";
-    ListaEstudiante.forEach(
-        estudiante=>{
-            let fila=`
-               <tr>
-                  <td>${estudiante.nro}</td>
-                  <td>${estudiante.nombre}</td>
-                  <td>${estudiante.apellido}</td>
-                  <td>${estudiante.fecNac}</td>
-                  <td>${estudiante.edad}</td>
-                  <td>${estudiante.genero}</td>
-                </tr>
-            `;
-            datos.innerHTML+=fila;
 
-        }
-    );
+function mostrarEstudiantes() {
+    const datos = document.getElementById("datos");
 
+    datos.innerHTML = "";
+
+    ListaDeEstudiantes.forEach(estudiante => {
+        datos.innerHTML += `
+            <tr>
+                <td>${estudiante.nro}</td>
+                <td>${estudiante.nombre}</td>
+                <td>${estudiante.apellido}</td>
+                <td>${estudiante.fechaNacimiento}</td>
+                <td>${estudiante.edad}</td>
+                <td>${estudiante.genero}</td>
+            </tr>
+        `;
+    });
 }
+
+function agregarTareas() {
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let fecha = document.getElementById("fecha").value;
+    let genero = document.getElementById("genero").value;
+
+    if (nombre === "" || apellido === "" || fecha === "" || genero === "") {
+        alert("Por favor complete todos los campos");
+        return;
+    }
+
+    let nuevoNro = ListaDeEstudiantes.length + 1;
+
+    let fechaNacimiento = new Date(fecha);
+    let hoy = new Date();
+
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+
+    let mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        edad--;
+    }
+
+    let fechaFormateada = fechaNacimiento.toLocaleDateString("es-ES");
+
+    ListaDeEstudiantes.push({
+        nro: nuevoNro,
+        nombre: nombre,
+        apellido: apellido,
+        edad: edad,
+        fechaNacimiento: fechaFormateada,
+        genero: genero
+    });
+
+    mostrarEstudiantes();
+
+    document.getElementById("nombre").value = "";
+    document.getElementById("apellido").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("genero").value = "";
+}
+
+function eliminarTareas() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("apellido").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("genero").value = "";
+}
+
+// Mostrar los 10 estudiantes al cargar la página
 mostrarEstudiantes();
